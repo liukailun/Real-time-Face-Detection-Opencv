@@ -8,14 +8,19 @@ CascadeClassifier face_cascade;
 
 int main(int argc, char * argv[])
 {
-	if (!face_cascade.load(face_cascade_name)){ printf("--(!)Error loading\n"); return -2; };
+	if (!face_cascade.load(face_cascade_name))
+	{
+		cout << "haarcascade_frontalface_alt.xml failed to open!" << endl;
+		return -1; 
+	};
+
 	VideoCapture capture;
 	capture.open(0);
 
 	if (!capture.isOpened())
 	{
 		cout << "capture device failed to open!" << endl;
-		return -1;
+		return -2;
 	}
 	
 	Mat frame;
