@@ -50,7 +50,7 @@ int main(int argc, char * argv[])
 		buf << frameCount;
 		string num = buf.str();
 		putText(frame, num, Point(20, 30), FONT_HERSHEY_SIMPLEX, 1, Scalar(0, 0, 255), 3);
-		imshow("hashTracker", frame);
+		imshow("Face", frame);
 
 		t = (double)cvGetTickCount() - t;
 		cout << "cost time: " << t / ((double)cvGetTickFrequency()*1000.) << endl;
